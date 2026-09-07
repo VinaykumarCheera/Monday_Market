@@ -17,12 +17,43 @@ header h1{margin:0 0 8px;font-size:30px}header p{margin:0;opacity:.9}
 button{border:0;background:#2563eb;color:white;border-radius:9px;padding:9px 12px;cursor:pointer;font-weight:bold}
 button:hover{background:#1d4ed8}.qty{font-size:13px;color:#64748b;margin-left:5px}
 
-/* QR Code Section Styling */
-.qr-section{background:white;border-radius:18px;padding:20px;margin-top:30px;text-align:center;box-shadow:0 5px 20px #00000012;display:flex;flex-direction:column;align-items:center;justify-content:center}
-.qr-section h3{margin:0 0 8px;font-size:18px;color:#172033}
-.qr-section p{margin:0 0 15px;font-size:14px;color:#64748b}
-.qr-container{background:#f8fafc;padding:15px;border-radius:12px;border:2px dashed #e2e8f0;display:inline-block}
-.qr-container img{display:block;width:180px;height:180px}
+/* QR Code Display Card Box Styles */
+.qr-card-section {
+  background: white;
+  border-radius: 18px;
+  padding: 24px;
+  margin-top: 35px;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.07);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.qr-card-section h3 {
+  margin: 0 0 6px 0;
+  font-size: 20px;
+  color: #172033;
+}
+.qr-card-section p {
+  margin: 0 0 20px 0;
+  font-size: 14px;
+  color: #64748b;
+  max-width: 400px;
+}
+.qr-image-wrapper {
+  background: #ffffff;
+  padding: 16px;
+  border-radius: 16px;
+  border: 3px dashed #cbd5e1;
+  display: inline-block;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+}
+.qr-image-wrapper img {
+  display: block;
+  width: 200px;
+  height: 200px;
+}
 
 footer{text-align:center;padding:25px;color:#64748b}
 </style>
@@ -33,13 +64,13 @@ footer{text-align:center;padding:25px;color:#64748b}
 <div class="cart">🛍️ Cart: <span><span id="count">0</span> items &nbsp; | &nbsp; <span id="total">₹0</span></span></div>
 <div class="shops" id="shops"></div>
 
-<!-- Added QR Code Display Section -->
-<div class="qr-section">
- <h3>Scan & Share Store</h3>
- <p>Scan this QR code with your mobile camera to open this digital store instantly!</p>
- <div class="qr-container">
-  <img id="qr-code-img" src="" alt="Loading QR Code...">
- </div>
+<!-- Integrated Scannable QR Code Block Layout -->
+<div class="qr-card-section">
+  <h3>Scan & Share Website</h3>
+  <p>Scan this high-contrast QR code with your mobile camera to open this digital market workspace directly!</p>
+  <div class="qr-image-wrapper">
+    <img id="live-store-qr" src="" alt="Generating QR Code Matrix...">
+  </div>
 </div>
 
 </div>
@@ -71,10 +102,10 @@ shops.forEach(([shop,items])=>{
  el.appendChild(card);
 });
 
-// Dynamic QR Code Generation Script
-const targetWebsite = "https://vinaykumarcheera.github.io/Monday_Market/";
-const qrElement = document.getElementById("qr-code-img");
-qrElement.src = `https://qrserver.com{encodeURIComponent(targetWebsite)}`;
+// Dynamic QR Engine Injection script for URL handling
+const currentHostedLink = "https://github.io";
+const imageContainer = document.getElementById("live-store-qr");
+imageContainer.src = `https://qrserver.com{encodeURIComponent(currentHostedLink)}`;
 </script>
 </body>
 </html>
